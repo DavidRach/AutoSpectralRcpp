@@ -62,6 +62,21 @@ PKG_CXXFLAGS = -fopenmp
 PKG_LIBS = -fopenmp $(LAPACK_LIBS) $(BLAS_LIBS) $(FLIBS)
 
 
+For Linux (Debian Trixie), if not already present, create and open a personal ~/.R/Makevars file 
+
+```bash
+mkdir .p ~/.R
+nano ~/.R/Makevars
+```
+
+Then enter the following
+```bash
+CXX_STD = CXX17
+PKG_CXXFLAGS = -fopenmp
+PKG_LIBS = -fopenmp -llapack -lblas
+```
+Then proceed to install the package. 
+
 You can install the development version of AutoSpectralRcpp like so:
 
 ``` r
