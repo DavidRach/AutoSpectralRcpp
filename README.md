@@ -98,6 +98,23 @@ The development version may be slightly ahead:
 devtools::install_github("DrCytometer/AutoSpectralRcpp@dev")
 ```
 
+### For Linux
+
+For Linux (Debian Trixie), if not already present, create and open a personal ~/.R/Makevars file 
+
+```bash
+mkdir .p ~/.R
+nano ~/.R/Makevars
+```
+
+Then enter the following
+```bash
+CXX_STD = CXX17
+PKG_CXXFLAGS = -fopenmp
+PKG_LIBS = -fopenmp -llapack -lblas
+```
+Then proceed to install the package. 
+
 ## Example
 
 Use the R wrapper function to unmix your data.
